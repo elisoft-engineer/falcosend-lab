@@ -1,0 +1,2 @@
+overrides:
+  falcosend-sdk: link:../falcosend-sdk
