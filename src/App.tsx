@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { FalcoSend } from 'falcosend-sdk';
 import './App.css';
 
 export default function App() {
   const [key, setKey] = useState('');
   const [form, setForm] = useState('contact_v1');
-  const [payload, setPayload] = useState('{\n  "email": "elkana@dev.local",\n  "subject": "Testing SDK Link",\n  "message": "Light theme looks clean!"\n}');
+  const [payload, setPayload] = useState('{\n  "name": "John Doe",\n  "email": "johndoe@example.com",\n  "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."\n}');
   const [logs, setLogs] = useState<{ id: number; text: string; type: 'cmd' | 'err' | 'ok' }[]>([]);
   const [isSending, setIsSending] = useState(false);
 
@@ -19,7 +19,10 @@ export default function App() {
     addLog(`INIT: Transmitting to [${form}]...`);
 
     try {
-      const sdk = new FalcoSend({ submissionKey: key });
+      const sdk = new FalcoSend({ 
+        baseUrl: "http://localhost:8000/api/v1/submissions/create/", 
+        submissionKey: key 
+      });
       const data = JSON.parse(payload);
       const res = await sdk.submit({ form_name: form, data });
       addLog(`SUCCESS: Data accepted. ID: ${res.id || 'OK'}`, 'ok');
@@ -33,16 +36,16 @@ export default function App() {
   return (
     <div className="app-container">
       <header className="glass-header">
-        <div className="logo">FALCO<span>SEND</span> <small>LABS</small></div>
+        <div className="logo">FALCO<span>SEND</span> <small>LAB</small></div>
         <div className="status-bit">GATEWAY ACTIVE</div>
       </header>
 
       <main className="dashboard">
         <section className="config-panel glass">
-          <div className="panel-label">SETTINGS</div>
+          <div className="panel-label">CONFIG</div>
           <div className="input-group">
-            <label>API Key</label>
-            <input type="password" value={key} onChange={e => setKey(e.target.value)} placeholder="fs_..." />
+            <label>Submission Key</label>
+            <input type="text" value={key} onChange={e => setKey(e.target.value)} placeholder="fs_..." />
           </div>
           <div className="input-group">
             <label>Form Name</label>
