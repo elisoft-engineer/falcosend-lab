@@ -12,8 +12,8 @@ importers:
         specifier: ^4.2.2
         version: 4.2.2(vite@8.0.1(@types/node@24.12.0)(jiti@2.6.1))
       falcosend-sdk:
-        specifier: ^1.0.6
-        version: 1.0.6
+        specifier: ^1.0.8
+        version: 1.0.8
       lucide-react:
         specifier: ^0.577.0
         version: 0.577.0(react@19.2.4)
@@ -678,8 +678,8 @@ packages:
     resolution: {integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==}
     engines: {node: '>=0.10.0'}
 
-  falcosend-sdk@1.0.6:
-    resolution: {integrity: sha512-vOP2vKrmA/TI+1uyZ1rgjt4BZCDBUZHkhLFYylEUe/mVZB9/TEnsmelIW5RX5oJWDX7z6JeAduwMGu4vuVJmLg==}
+  falcosend-sdk@1.0.8:
+    resolution: {integrity: sha512-B4DlmcgVHMhn/xVmUlnY1Imk3oTV037FCIHrqUYOFmbOP9enxWJF2N8OLxSiDLtKICyHCpSJN/WR73Pz740Gag==}
 
   fast-deep-equal@3.1.3:
     resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
@@ -1761,7 +1761,7 @@ snapshots:
 
   esutils@2.0.3: {}
 
-  falcosend-sdk@1.0.6: {}
+  falcosend-sdk@1.0.8: {}
 
   fast-deep-equal@3.1.3: {}
 
