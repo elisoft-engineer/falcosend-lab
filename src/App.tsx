@@ -20,7 +20,8 @@ export default function App() {
 
     try {
       const sdk = new FalcoSend({ 
-        submissionKey: key 
+        submissionKey: key,
+        url: 'http://localhost:8000/api/v1/submissions/create/'
       });
       const data = JSON.parse(payload);
       const res = await sdk.submit({ form_name: form, data });
